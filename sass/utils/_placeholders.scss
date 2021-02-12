@@ -1,0 +1,14 @@
+%window-centered {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%text-uppercase {
+  text-transform: uppercase;
+}
+
+%transition-animation {
+  transition-duration: $animation-duration;
+  transition-timing-function: $animation-type;
+}

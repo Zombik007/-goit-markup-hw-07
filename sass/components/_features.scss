@@ -1,0 +1,57 @@
+// Внутрение отступы секции "Особенности"
+.features {
+  padding-top: 94px;
+  padding-bottom: 94px;
+
+  // Задается свойство Flex элементам раздела "Особенности"
+  &__list {
+    display: flex;
+  }
+
+  // Превращает элементы списка раздела "Особенности" в строчно-блочные
+  &__item {
+    display: inline-block;
+    max-width: 270px;
+    padding: 0;
+  }
+
+  // Задаются отступы элементам списка раздела "Особенности" кроме последнего
+  &__list > &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  // Задаются фоновые изображения элементам списка раздела "Особенности"
+  &__img {
+    width: 270px;
+    height: 120px;
+    background-color: #f5f4fa;
+    padding: 25px 100px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+  }
+
+  // Задаются икнонки фоновым изображениям элементов списка раздела "Особенности"
+  &__icon {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    fill: currentColor;
+  }
+
+  // Стили заголовков раздела "Особенности"
+  &__caption {
+    font-size: $main-font-size;
+    line-height: 1.14em;
+    @extend %text-uppercase;
+    color: $text-caption-color;
+    margin-bottom: 10px;
+  }
+
+  // Стили текста раздела "Особенности"
+  &__text {
+    font-weight: $font-weight-normal;
+    font-size: $main-font-size;
+    line-height: 1.71em;
+    max-width: 270px;
+  }
+}

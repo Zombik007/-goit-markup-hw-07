@@ -1,0 +1,51 @@
+// Стили главного раздела страницы "Студия"
+// Фоновый цвет секции "Герой"
+.hero {
+  padding: 0;
+  text-align: center;
+  background: #c4c4c4;
+
+  // Фон секции "Герой"
+  &__overlay {
+    background: linear-gradient(to bottom, #2f303a66, #2f303a66),
+      url(../images/heroImg.jpg);
+    max-width: 1600px;
+    height: 600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    margin: 0 auto;
+    background-position: center;
+  }
+
+  // Cтили для главного заголовка
+  &__caption {
+    font-weight: $font-weight-heavy;
+    font-size: 44px;
+    line-height: 1.36em;
+    text-align: center;
+    letter-spacing: 0.06em;
+    @extend %text-uppercase;
+    max-width: 696px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: $color-white;
+  }
+
+  // Стили кнопки секции "Герой"
+  &__button {
+    font-weight: $font-weight-bold;
+    line-height: 1.875em;
+    text-align: center;
+    color: $color-white;
+    background-color: $accent-color;
+    cursor: pointer;
+    min-width: 200px;
+    max-height: 50px;
+    border: 1px solid transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 10px 32px;
+  }
+}

@@ -1,0 +1,90 @@
+// Задается свойство Flex элементам карточек "Проекты" с переносом строки
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -30px;
+
+  // Размещаются элементы карточек "Проекты" по три в ряд
+  &__item {
+    // position: relative; */
+    flex-basis: calc(100 / 3 - 10px);
+    margin-right: 30px;
+    margin-bottom: 30px;
+    max-width: 370px;
+    border: 1px solid #eeeeee;
+    @include transit(box-shadow);
+    @extend %transition-animation;
+  }
+
+  // Добавление тени к карточкам "Проекты"
+  &__item:hover,
+  &__item:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  // Убирается правые внешние отступы у каждого третего элемента карточек "Проекты"
+  &__list > &__item:nth-child(3n) {
+    margin-right: -30px;
+  }
+
+  // Задается нижний внешний отступ для изображения в карточках "Проекты"
+  &__img {
+    position: relative;
+    overflow: hidden;
+  }
+
+  // Блок который появляется над картинкой в карточках "Проекты"
+  &__overlay {
+    position: absolute;
+    width: calc(100% + 2px);
+    height: 100%;
+    background-color: $accent-color;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    padding: 63px 24px;
+    transform: translateY(101%);
+    @include transit(transform);
+    @extend %transition-animation;
+  }
+
+  // Эффекты блока который появляется над картинкой в карточках "Проекты"
+  &__item:hover &__overlay,
+  &__item:focus &__overlay {
+    transform: translateY(0);
+  }
+
+  // Стили текста блока который появляется над картинкой в карточках "Проекты"
+  &__overlay-text {
+    font-size: 18px;
+    font-weight: $font-weight-normal;
+    line-height: 1.55em;
+    color: $color-white;
+  }
+
+  // Внутрение отступы в карточках "Проекты"
+  &__block {
+    display: inline-block;
+    padding-top: 20px;
+    padding-right: 24px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    max-width: 370px;
+  }
+
+  // Стили заголовков карточек на странице "Портфолио"
+  &__caption {
+    font-size: 18px;
+    line-height: 2em;
+    letter-spacing: 0.06em;
+    color: $text-caption-color;
+    margin-bottom: 4px;
+  }
+
+  // Стили текста карточек на странице "Портфолио"
+  &__text {
+    font-weight: $font-weight-normal;
+    line-height: 1.875em;
+  }
+}

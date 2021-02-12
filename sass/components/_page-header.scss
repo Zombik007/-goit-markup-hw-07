@@ -1,0 +1,122 @@
+// Стиль нижней границы для хедера
+.page-header {
+  border-bottom: 1px solid #ececec;
+
+  // Задается свойство Flex контейнеру
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  // Задается свойство Flex элементам шапки сайта
+  &__nav,
+  &__list,
+  &__contacts {
+    display: flex;
+    align-items: center;
+  }
+
+  // Задаются отступы ссылкам навигации всем эелементам кроме последнего
+  &__item:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  // Цвет текста ссылок в шапке
+  &__link {
+    font-weight: $font-weight-medium;
+    font-size: $main-font-size;
+    line-height: 1.14em;
+    letter-spacing: 0.02em;
+    display: block;
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    color: $text-caption-color;
+    @include transit(color);
+    @extend %transition-animation;
+  }
+
+  &__link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $accent-color;
+    opacity: 0;
+    @include transit(opacity);
+    @extend %transition-animation;
+  }
+
+  &__link--current.page-header__link::after,
+  &__link:hover::after {
+    opacity: 1;
+  }
+
+  // Стили оттображения текущего элемента
+  &__link--current {
+    color: $accent-color;
+  }
+
+  // Цвет текста ссылок в шапке при наведении
+  &__link:hover,
+  &__link:focus {
+    color: $accent-color;
+  }
+
+  // Цвет текста контактов в шапке
+  &__contacts--mail,
+  &__contacts--tel {
+    color: $main-text-color;
+    @include transit(color);
+    @extend %transition-animation;
+  }
+
+  // Цвет текста и иконок контактов в шапке при наведении
+  &__contacts--mail:hover,
+  &__contacts--mail:focus,
+  &__contacts--tel:hover,
+  &__contacts--tel:focus,
+  &__contacts--icon:hover,
+  &__contacts--icon:focus {
+    color: $accent-color;
+  }
+
+  // Автоматический отступ слева для эелементов "Контакты"
+  &__contacts {
+    margin-left: auto;
+  }
+
+  // Задается свойство Flex элементам "e-mail" и телефон
+  &__contacts--mail,
+  &__contacts--tel {
+    display: flex;
+    align-items: center;
+  }
+
+  // Отступ справа для элемента "e-mail"
+  &__contacts--mail {
+    margin-right: 50px;
+  }
+
+  // Задаются отступы и цвет иконок элементов "e-mail" и телефон
+  &__contacts--icon {
+    margin-right: 10px;
+    fill: currentColor;
+  }
+
+  // Задаются размеры иконки элемента "e-mail"
+  &__contacts--envelope {
+    width: 16px;
+    height: 12px;
+  }
+
+  // Задаются размеры иконки элемента телефон
+  &__contacts--smartphone {
+    width: 10px;
+    height: 16px;
+  }
+}

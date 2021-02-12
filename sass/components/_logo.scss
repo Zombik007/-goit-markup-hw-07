@@ -1,0 +1,35 @@
+// Общие стили для Logo
+.page-header__logo {
+  font-family: $sec-font-family;
+  font-size: 26px;
+  line-height: 1.19em;
+
+  // Цвет частички Web на Logo
+  &--accent {
+    color: $accent-color;
+  }
+
+  // Цвет частички Studio на Logo
+  &--black {
+    margin-right: 93px;
+    color: #000;
+  }
+}
+
+//  Внешний отступ блока логотипа от ссылок социальных сетей
+.footer__logo {
+  font-family: $sec-font-family;
+  font-size: 26px;
+  line-height: 1.19em;
+  max-width: 231px;
+  margin-right: 70px;
+
+  &--web {
+    color: $accent-color;
+  }
+
+  // Стили логотипа подвала
+  &--studio {
+    color: $color-white;
+  }
+}

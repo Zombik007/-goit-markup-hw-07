@@ -1,0 +1,57 @@
+// Задается блок ссылок социальных сетей как Flex обьект
+.social {
+  display: inline-flex;
+  flex-direction: column;
+  margin-right: 93px;
+
+  // Задается текст блока социальных сетей в подвале страницы
+  &__caption,
+  .subscribe__text {
+    margin-bottom: 20px;
+    font-weight: $font-weight-bold;
+    font-size: $main-font-size;
+    line-height: 1.14em;
+    @extend %text-uppercase;
+    color: $color-white;
+  }
+
+  // Задается список ссылок социальных сетей как Flex обьект
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  // Внешний отступ ссылок социальных сетей подвала страницы
+  &__list > &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  // Ссылки социальных сетей подвала страницы как Flex обьекты
+  &__link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: #fff;
+    @include transit(background-color);
+    @include transit(color);
+    @extend %transition-animation;
+  }
+
+  // Изменение цвета ссылок социальных сетей подвала страницы
+  &__link:hover,
+  &__link:focus {
+    background-color: $accent-color;
+    color: #fff;
+  }
+
+  // Задаются размеры ссылок социальных сетей подвала страницы
+  &__icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+}

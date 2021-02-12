@@ -1,0 +1,56 @@
+// Внутрение отступы раздела "Партнеры"
+.customers {
+  padding-top: 94px;
+  padding-bottom: 94px;
+
+  // Текст раздела "Партнеры"
+  &__caption {
+    font-size: $caption-font-size;
+    line-height: 1.17em;
+    text-align: center;
+    color: $text-caption-color;
+    margin-bottom: 50px;
+  }
+
+  // Текст раздела "Партнеры"
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  // Задаются внешние отступы элементам списка раздела "Партнеры" кроме последнего
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  // Задаются размеры ссылок раздела "Партнеры"
+  &__link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #afb1b8;
+    border: 1px solid #afb1b8;
+    border-radius: 4px;
+    width: 170px;
+    height: 90px;
+    padding: 20px 0;
+    @include transit(border-color);
+    @include transit(color);
+    @extend %transition-animation;
+  }
+
+  // Задаются размеры иконок раздела "Партнеры"
+  &__icon {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    fill: currentColor;
+  }
+
+  // Изменение цвета ссылок раздела "Партнеры"
+  &__link:hover,
+  &__link:focus {
+    border-color: $accent-color;
+    color: $accent-color;
+  }
+}
